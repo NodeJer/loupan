@@ -7,7 +7,7 @@ new Swiper('#homeBanner', {
 });
 
 tabs($('.tab-btns > a'), $('.tab-content >div'), 'active');
-
+scrollToggleNav($('#menu a'), 'actived');
 //预约看房日期选择
 var calendar = new LCalendar();
 calendar.init({
@@ -16,13 +16,43 @@ calendar.init({
   // 'minDate': new Date().toLocaleDateString().replace(/\//g, '-'),//最小日期 注意：该值会覆盖标签内定义的日期范围
 });
 
-function tabs($btns, $contents, activeClass){
+function tabs($btns, $contents, activeClass) {
   $btns.click(clickFn);
   $btns.eq(0).click();
   
-  function clickFn(){
+  function clickFn() {
     $btns.removeClass(activeClass);
     $contents.hide();
     $contents.eq($(this).addClass(activeClass).index()).show();
   }
+}
+
+function scrollToggleNav($links, activeClass) {
+  $links.click(function () {
+    $links.removeClass(activeClass);
+    $(this).addClass(activeClass);
+  });
+  
+  $(window).scroll(function () {
+    var scrollTop = $(window).scrollTop();
+    
+    for (var i = $links.length - 1; i > -1; i--) {
+      var $currentLink = $links.eq(i);
+      var href         = $currentLink.attr('href');
+      if (scrollTop >= $(href).position().top) {
+        if (i > 0) {
+          $currentLink.parent().css({display: 'flex'});
+        }
+        else{
+          $currentLink.parent().hide();
+        }
+        if (!$currentLink.hasClass(activeClass)) {
+          var offsetLeft = $currentLink.click()[0].offsetLeft;
+          // console.log(position)
+          $currentLink.parent().scrollLeft(offsetLeft);
+        }
+        break;
+      }
+    }
+  });
 }
