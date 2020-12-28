@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/layer.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/LCalendar.css">
   <style>
     /*重置layer弹出框样式--*/
     .layui-m-layercont {
@@ -58,9 +59,9 @@
       <span>机场</span>
       <span>高绿化率</span>
     </div>
-    <a href="tel:4008888888" class="phone">
+    <a href="tel:400-833-0020" class="phone">
       <div class="info">
-        <p>售楼处：4008888888</p>
+        <p>售楼处：400-833-0020</p>
         <p>隐号拨打，放心致电，了解最新房源</p>
       </div>
       <img src="image/phone.png" alt="">
@@ -219,10 +220,333 @@
       <div class="btn">获取电子楼书及发送报价</div>
     </div>
   </div>
+  <!--  预约看房-->
+  <div class="yuyue">
+    <div class="title">预约看房</div>
+    <form id="yuyue">
+      <div class="date">
+        <input id="dateTime" readonly type="text" placeholder="预约日期：">
+        <img src="image/date.png" alt="">
+      </div>
+      <div class="radio-body">
+        <div>
+          <span>预约时间：</span>
+          <div class="radios">
+            <label>
+              <input name="dateTime" type="radio" value="早上" checked>
+              早上
+            </label>
+            <label>
+              <input name="dateTime" type="radio" value="中午">
+              中午
+            </label>
+            <label>
+              <input name="dateTime" type="radio" value="晚上">
+              晚上
+            </label>
+          </div>
+        </div>
+        <div>
+          <span>看房人数：</span>
+          <div class="radios">
+            <label>
+              <input name="num" type="radio" value="5人以内" checked>
+              5人以内
+            </label>
+            <label>
+              <input name="num" type="radio" value="7人以内">
+              7人以内
+            </label>
+            <label>
+              <input name="num" type="radio" value="更多">
+              更多
+            </label>
+          </div>
+        </div>
+        <div>
+          <span>交通方式：</span>
+          <div class="radios">
+            <label>
+              <input name="traffic" type="radio" value="自驾" checked>
+              自驾
+            </label>
+            <label>
+              <input name="traffic" value="同城接送" type="radio">
+              同城接送
+            </label>
+            <label>
+              <input name="traffic" value="跨城接送" type="radio">
+              跨城接送
+            </label>
+            <label>
+              <input name="traffic" value="高铁机场接机" type="radio">
+              高铁机场接机
+            </label>
+          </div>
+        </div>
+        <p>注：看房专车预约免费接送。</p>
+      </div>
+      <input type="tel" name="phone" placeholder="手机号码："/>
+      <textarea name="remark" placeholder="备注："></textarea>
+    </form>
+    <div class="yuyue-btn">
+      <div class="btn">预约看房</div>
+    </div>
+  </div>
+  <!--  金牌顾问-->
+  <div class="guwen">
+    <div class="title">金牌顾问</div>
+    <div class="body">
+      <div class="item">
+        <img src="https://www.yjsh666.cn/M00/avatar/2020/07/31/3d0329a9fa493ee0f27703274f84a0a6.jpg" alt="">
+        <div class="info">
+          <p>张小鹏</p>
+          <div class="tags">
+            <span>客户推荐</span>
+            <span>业务优秀</span>
+          </div>
+          <div class="stars">
+            <img src="image/star.png" alt="">
+            <img src="image/star.png" alt="">
+            <img src="image/star.png" alt="">
+            <img src="image/star.png" alt="">
+          </div>
+        </div>
+        <div class="icons">
+          <img src="image/liaotian.png" alt="">
+          <img src="image/dianhua.png" alt="">
+        </div>
+      </div>
+      <div class="item">
+        <img src="https://www.yjsh666.cn/M00/avatar/2020/07/31/3d0329a9fa493ee0f27703274f84a0a6.jpg" alt="">
+        <div class="info">
+          <p>张小鹏</p>
+          <div class="tags">
+            <span>客户推荐</span>
+            <span>业务优秀</span>
+          </div>
+          <div class="stars">
+            <img src="image/star.png" alt="">
+            <img src="image/star.png" alt="">
+            <img src="image/star.png" alt="">
+            <img src="image/star.png" alt="">
+          </div>
+        </div>
+        <div class="icons">
+          <img src="image/liaotian.png" alt="">
+          <img src="image/dianhua.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  项目百问百答-->
+  <div class="answers">
+    <div class="body">
+      <div class="title">
+        项目百问百答
+      </div>
+      <div class="qa-body">
+        <div class="qa">
+          <div class="qt">售前问题</div>
+          <div class="q hasAnswer">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+            <p>答：一次性付款最低总价约49万。按揭付款总价约55万。按揭首付约18万元。</p>
+          </div>
+          <div class="q">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+          </div>
+          <div class="q">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="qa">
+          <div class="qt">售中问题</div>
+          <div class="q hasAnswer">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+            <p>答：一次性付款最低总价约49万。按揭付款总价约55万。按揭首付约18万元。</p>
+          </div>
+          <div class="q">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+          </div>
+          <div class="q">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="qa">
+          <div class="qt">售后问题</div>
+          <div class="q hasAnswer">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+            <p>答：一次性付款最低总价约49万。按揭付款总价约55万。按揭首付约18万元。</p>
+          </div>
+          <div class="q">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+          </div>
+          <div class="q">
+            <p>
+              <span>问：单间最低总价跟首付各是多少钱？</span>
+              <span>
+                <img class="down" src="image/down.png" alt="">
+                <img class="up" src="image/up.png" alt="">
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <form id="ask">
+        <div class="t">问题还没解决？请将您的疑问告诉我们：</div>
+        <textarea name="consult" placeholder="请填写您的问题，专业顾问将为您解答"></textarea>
+        <input type="tel" name="phone" placeholder="输入手机号码">
+        <div class="submit-btn">
+          <div class="btn">提交问题</div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--  资讯-->
+  <div class="zixun">
+    <div class="title">资讯</div>
+    <div class="body">
+      <div class="item">
+        <p>鼎龙湾国际海洋度假区目前在售44-118m单位，一至三房单位，精装洋房70年产权。</p>
+        <div class="foot">
+          <span class="tag">楼盘资讯</span>
+          <span class="date">2020-05-01</span>
+        </div>
+      </div>
+      <div class="item">
+        <p>鼎龙湾国际海洋度假区目前在售44-118m单位，一至三房单位，精装洋房70年产权。</p>
+        <div class="foot">
+          <span class="tag">楼盘资讯</span>
+          <span class="date">2020-05-01</span>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <div class="btn">查看动态</div>
+      <div class="btn">一键订阅</div>
+    </div>
+  </div>
+  <!--  业主论坛-->
+  <div class="zixun luntan">
+    <div class="title">业主论坛</div>
+    <div class="body">
+      <div class="item">
+        <div class="head">
+          <img src="https://hd.zdb.im/theme/one/header/head%20(10).jpg" alt="">
+          <span>孤单的背影</span>
+        </div>
+        <p>鼎龙湾国际海洋度假区目前在售44-118m单位，一至三房单位，精装洋房70年产权。</p>
+        <div class="foot">
+          <span class="tag"><img src="image/zan.png" alt="">156</span>
+          <span class="date">2020-05-01</span>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <div class="btn">查看全部</div>
+      <div class="btn">立即评论</div>
+    </div>
+    <div class="qr">
+      <img src="https://hd.zdb.im/assets/image/qrcode.png" alt="">
+      <div class="btns">
+        <div class="btn">立即加入</div>
+      </div>
+    </div>
+  </div>
+  <!--  电子楼书-->
+  <div class="book">
+    <div class="title">电子楼书</div>
+    <img width="100%" src="https://hd.zdb.im/theme/one/image/wuzheng.png?t=20200701" alt="">
+    <div class="btns">
+      <div class="btn">查看楼盘证书</div>
+    </div>
+  </div>
+  <div class="footer">
+    <img src="image/logo.jpg" alt="">
+    <div class="info">
+      <p>
+        <img src="image/ren.jpg" alt="">
+        幵友商: 昊川市鼎龙置业有限公司
+      </p>
+      <p>
+        <img src="image/zhen.jpg" alt="">
+        预售证号:
+        <a>湛房预许第0520180011号</a>
+      </p>
+      <p>
+        <img src="image/house.jpg" alt="">
+        @珠海线上展厅网狢技木有跟公司
+      </p>
+    </div>
+    <div class="icons">
+      <img src="image/wx.png" alt="">
+      <img src="image/dianhua.png" alt="">
+    </div>
+  </div>
+  <div class="nav">
+    <div class="share">
+      <img src="image/share.png" alt="">
+      分享
+    </div>
+    <div class="btns">
+      <a href="#yuyue">预约看房</a>
+      <a href="tel:400-833-0020">免费致电</a>
+      <a href="">推荐客户</a>
+    </div>
+  </div>
 </div>
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="js/layer.js"></script>
+<script src="js/LCalendar.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>
