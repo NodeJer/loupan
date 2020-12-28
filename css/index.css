@@ -4,7 +4,7 @@ p {
 }
 
 .container{
-	padding-bottom : 1.4rem;
+	padding-bottom : 2rem;
 }
 
 .swiper-container {
@@ -529,6 +529,7 @@ p {
 
 .guwen .body .item .stars {
 	display    : flex;
+	align-items: center;
 	margin-top : .16rem;
 }
 
@@ -805,6 +806,7 @@ p {
 }
 .footer >img{
 	width : 1.5rem;
+	height : 1.7rem;
 }
 .footer .info{
 	display: flex;
