@@ -406,7 +406,7 @@ p {
 	border        : 1px solid #e5e3e3;
 	border-radius : .1rem;
 	resize        : none;
-	
+	-webkit-user-select :none;
 	box-sizing    : border-box;
 }
 
