@@ -236,14 +236,35 @@ div {
 
 .base-info .look-room {
 	display         : flex;
-	justify-content : center;
+	align-items: center;
+	justify-content: space-around;
+	padding: .2rem;
+	margin-top : .2rem;
+	background-color: #f8f8f9;
+}
+.base-info .look-room >img{
+	width : .64rem;
+	
+}
+.base-info .look-room .info{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	line-height: .4rem;
+	margin-left : .3rem;
+}
+.base-info .look-room .info span{
+	font-size : .3rem;
+}
+.base-info .look-room .info span:last-child{
+	font-size : .24rem;
+	color: #666;
 }
 
 .base-info .look-room .btn {
-	font-size        : .3rem;
+	font-size        : .24rem;
 	color            : #25c3cf;
-	padding          : .24rem .34rem;
-	margin-top       : .3rem;
+	padding          : .12rem .2rem;
 	background-color : #e0fafc;
 	border           : 1px solid #25c3cf;
 	border-radius    : .1rem;
@@ -476,9 +497,14 @@ div {
 
 .high-lights .get-book {
 	display         : flex;
-	justify-content : center;
+	flex-direction: column;
+	align-items: center;
 }
-
+.high-lights .get-book >p{
+	font-size : .2rem;
+	color: red;
+	margin-top : .2rem;
+}
 .high-lights .btn {
 	font-size        : .28rem;
 	color            : #25c3cf;
