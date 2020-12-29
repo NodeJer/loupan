@@ -87,7 +87,7 @@ div {
 	overflow-x       : auto;
 	white-space      : nowrap;
 	font-size        : 0;
-	z-index          : 2;
+	z-index          : 4;
 	box-shadow       : 4px 0 4px #bbb;
 }
 
@@ -129,7 +129,11 @@ div {
 
 .base-info {
 	position : relative;
-	padding  : .32rem .3rem 0 .3rem;
+	padding  : .32rem 0.1rem 0 0.1rem;
+	margin : -1rem .2rem 0 .2rem;
+	border-radius: .2rem .2rem 0 0;
+	background-color: #fff;
+	z-index: 2;
 }
 
 .base-info > .title {
@@ -140,11 +144,11 @@ div {
 
 .base-info > .title span:last-child {
 	color       : #fe615a;
-	margin-left : .8rem;
+	margin-left : .5rem;
 }
 
 .base-info .tags {
-	margin-top : .08rem;
+	margin-top : .14rem;
 	font-size  : .22rem;
 	color      : #666666;
 	overflow   : hidden;
@@ -326,7 +330,7 @@ div {
 .base-info .low-price {
 	position         : absolute;
 	right            : 0;
-	top              : .18rem;
+	top              : .2rem;
 	color            : #fff;
 	font-size        : .24rem;
 	padding          : .14rem .3rem;
@@ -602,8 +606,25 @@ div {
 	padding     : .34rem 0;
 	font-weight : 600;
 }
+.guwen .tags{
+	display: flex;
+	align-items: center;
+	
+	font-size : .24rem;
+}
+.guwen .tags >div{
+	display: flex;
+	align-items: center;
+	margin-right : .2rem;
+}
+.guwen .tags img{
+	width : .32rem;
+	margin-right : .05rem;
+}
 
-.guwen .body {}
+.guwen .body {
+	margin-top : .3rem;
+}
 
 .guwen .body .item:first-child {
 	margin-top : 0;
