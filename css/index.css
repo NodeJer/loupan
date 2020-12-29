@@ -426,6 +426,7 @@ div {
 .huxing .tab-content .item .info {
 	margin-left : .2rem;
 	font-size   : .24rem;
+	text-align: center;
 }
 
 .huxing .tab-content .item .info p {
