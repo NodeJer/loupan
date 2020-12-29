@@ -9,6 +9,7 @@ p {
 
 a {
 	-webkit-tap-highlight-color : rgba(0, 0, 0, 0);
+	text-decoration: none;
 }
 div{
 	-webkit-overflow-scrolling:touch;
@@ -146,6 +147,7 @@ div{
 	top         : .3rem;
 	display     : flex;
 	align-items : center;
+	color: #999;
 }
 
 .base-info .detail .more img {

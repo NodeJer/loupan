@@ -39,7 +39,7 @@ function scrollToggleNav($links, activeClass) {
     for (var i = $links.length - 1; i > -1; i--) {
       var $currentLink = $links.eq(i);
       var href         = $currentLink.attr('href');
-      if (scrollTop >= $(href).position().top) {
+      if (scrollTop+30 >= $(href)[0].offsetTop) {
         if (i > 0) {
           $currentLink.parent().css({display: 'flex'});
         }
