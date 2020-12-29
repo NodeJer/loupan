@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <link crossorigin="anonymous" integrity="sha384-qPBrxW93Q6pt1TAjWLNmOIU3NvzWiWI5qU4ajHPPyNxZBYQk582m0HMPnXwkIMJO" href="https://lib.baomitu.com/normalize/4.2.0/normalize.css" rel="stylesheet">
-  
+  <link rel="stylesheet" href="css/layer.css">
+  <link rel="stylesheet" href="css/index.css">
   <title>楼盘详情</title>
   
   <script src="js/rem.js"></script>
@@ -19,7 +20,7 @@
       margin : 0;
     }
     .info{
-      padding:0 .32rem;
+      padding:.32rem;
       line-height: .6rem;
       font-size : .28rem;
       background-color: #fff;
@@ -74,7 +75,7 @@
     </p>
     <p>
       <span>参考总价:</span>
-      <span class="arrow">
+      <span class="arrow" onclick="goDijia()">
         点击获取底价
         <img src="image/arrow-g.png" alt="">
       </span>
@@ -103,7 +104,7 @@
     </p>
     <p>
       <span>售楼地址:</span>
-      <span class="arrow">
+      <span class="arrow" onclick="goLocation()">
         点击发送定位至手机
         <img src="image/arrow-g.png" alt="">
       </span>
@@ -162,5 +163,16 @@
   </div>
   <div class="btn">点击发送楼盘详情介绍</div>
 </div>
+<script type="text/template" id="dialogContent">
+  <form class="dialogForm">
+    <div class="t1">{{t1}}</div>
+    <div class="t2">{{t2}}</div>
+    <div class="t3">{{t3}}</div>
+    <input autofocus name="layerPhone" type="tel" placeholder="请输入手机号码" />
+  </form>
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
+<script src="js/layer.js"></script>
+<script src="js/openDialog.js"></script>
 </body>
 </html>

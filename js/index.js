@@ -1,6 +1,15 @@
+
+
 /*首页轮播图*/
 new Swiper('#homeBanner', {
   pagination         : '#homeBannerPagination',
+  // autoplay           : 5000,
+  paginationClickable: false,
+  loop               : false
+});
+/*电子证书轮播图*/
+new Swiper('#bookSwiper', {
+  pagination         : '#bookSwiperPagination',
   // autoplay           : 5000,
   paginationClickable: false,
   loop               : false
@@ -15,6 +24,12 @@ calendar.init({
   'type'   : 'date',//date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择
   // 'minDate': new Date().toLocaleDateString().replace(/\//g, '-'),//最小日期 注意：该值会覆盖标签内定义的日期范围
 });
+
+
+
+
+
+
 
 function tabs($btns, $contents, activeClass) {
   $btns.click(clickFn);
@@ -39,11 +54,11 @@ function scrollToggleNav($links, activeClass) {
     for (var i = $links.length - 1; i > -1; i--) {
       var $currentLink = $links.eq(i);
       var href         = $currentLink.attr('href');
-      if (scrollTop+30 >= $(href)[0].offsetTop) {
+      if (scrollTop + 50 >= $(href)[0].offsetTop) {
         if (i > 0) {
           $currentLink.parent().css({display: 'flex'});
         }
-        else{
+        else {
           $currentLink.parent().hide();
         }
         if (!$currentLink.hasClass(activeClass)) {
