@@ -29,7 +29,7 @@ div {
 	margin-top : .2rem;
 }
 .dialogForm .t3{
-	font-size : .18rem;
+	font-size : .24rem;
 	color: #666;
 }
 
@@ -43,6 +43,37 @@ div {
 	border:1px solid #ccc;
 	border-radius: .1rem;
 	text-indent: .2rem;
+}
+.tuijianDialogForm input{
+	margin-top : .2rem;
+}
+.tuijianDialogForm .item{
+	margin-top : .2rem;
+}
+.tuijianDialogForm .item .title{
+	text-align: left;
+}
+.tuijianDialogForm .radios{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size : .24rem;
+	margin-top : .2rem;
+}
+.tuijianDialogForm .radios label, .tuijianDialogForm .radios >div{
+	display: flex;
+	align-items: center;
+}
+.tuijianDialogForm .radios label{
+	margin-right : .2rem;
+}
+.tuijianDialogForm  input[type=radio]{
+	width : auto;
+	margin : 0 .2rem 0 0;
+}
+.tuijianDialogForm .remark{
+	font-size : .22rem;
+	color: #666;
 }
 
 .menu {
@@ -936,7 +967,7 @@ div {
 }
 
 .footer .icons img:first-child {
-	width : .3rem;
+	width : .6rem;
 }
 
 .footer .icons img:last-child {

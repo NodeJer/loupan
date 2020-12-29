@@ -1,15 +1,16 @@
 //手机号正则
-var phoneReg    = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/;
+var phoneReg = /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/;
 //姓名正则
-var nameReg     = /^[\u4E00-\u9FA5]{2,4}$/;
+var nameReg  = /^[\u4E00-\u9FA5]{2,4}$/;
 //时间正则
-var dateReg     = /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]-[0-3]{0,1}[0-9]$/;
+var dateReg  = /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]-[0-3]{0,1}[0-9]$/;
 
 window.siteId   = parseInt("25");
 window.siteName = "湛江-鼎龙湾";
+
 //获取底价
 function goDijia() {
-  openDialog('咨询成交底价', '一键查询售楼处最新成底价', '(查询结果将以短信形式发送至手机)', '立即获取', function (phone) {
+  openDialog('一键查询售楼处最新成底价', '', '(查询结果将以短信形式发送至手机)', '立即获取', function (phone) {
     submitForm({phone: phone, entrance: window.siteName + ' 咨询成交底价'}, null, true);
   });
 }
@@ -108,25 +109,29 @@ function goNews() {
     submitForm({phone: phone, entrance: window.siteName + ' 查看更多动态'}, null, true);
   });
 }
+
 //一键订阅
 function goDescribe() {
   openDialog('一键订阅', '', '(查询结果将以短信形式发送至手机)', '立即订阅', function (phone) {
     submitForm({phone: phone, entrance: window.siteName + ' 一键订阅'}, null, true);
   });
 }
+
 //业主论坛查看全部
 function goFornumAll() {
   openDialog('查看全部', '', '(查询结果将以短信形式发送至手机)', '立即获取', function (phone) {
     submitForm({phone: phone, entrance: window.siteName + ' 业主论坛查看全部'}, null, true);
   });
 }
+
 //业主论坛评论
 function goFornumComment() {
   openLayerComment('我要评论', '立即评论', function (phone, comment) {
     //todo 调用业主论坛评论接口
-    submitForm({ phone: phone, entrance: window.siteName + ' 业主论坛立即评论', consult: comment}, null);
+    submitForm({phone: phone, entrance: window.siteName + ' 业主论坛立即评论', consult: comment}, null);
   });
 }
+
 //业主微信群
 function goJoin() {
   openDialog('加入业主微信群', '', '(查询结果将以短信形式发送至手机)', '立即加入', function (phone) {
@@ -140,6 +145,14 @@ function goZhenshu() {
     submitForm({phone: phone, entrance: window.siteName + ' 查看楼盘证书'}, null, true);
   });
 }
+
+//推荐
+function goTuijian() {
+  openTuijianDialog('推荐客户', '确定预约', function (){
+    submitForm({entrance: window.siteName + ' 推荐客户'}, 'tuijianDialogForm', true);
+  });
+}
+
 if ("undefined" !== typeof window.sessionStorage) {
   if (null === window.sessionStorage.getItem('referrer_' + window.siteId)) {
     window.sessionStorage.setItem('referrer_' + window.siteId, window.document.referrer);
@@ -154,6 +167,7 @@ function getReferrer() {
   }
   return window.document.referrer;
 }
+
 function submitForm(baseForm, formId, slient) {
   
   var callbackAfterAjax = $(this).attr('callback');
@@ -255,6 +269,51 @@ function openDialog(t1, t2, t3, btnText, callback) {
       //正确填写手机号码
       else {
         callback(phone);
+        layer.close(index);
+      }
+    }
+  });
+}
+
+function openTuijianDialog(t1, btnText, callback) {
+  var tmp = $('#tuijianDialogContent').html().replace('{{t1}}', t1)
+  layer.open({
+    content: tmp,
+    btn    : [btnText, '关闭'],
+    success: function () {
+      // $('input[name=layerPhone]')[0].focus();
+    },
+    cancel : function (index) {
+      layer.close(index);
+    },
+    yes    : function (index) {
+      var $form = $('#tuijianDialogForm');
+      //被推荐人
+      var phone1 = $form[0]['phone1'].value;
+      var name1 = $form[0]['name1'].value;
+      //推荐人
+      var phone2 = $form[0]['phone2'].value;
+      var name2 = $form[0]['name2'].value;
+      
+      if (!phoneReg.test(phone1)) {
+        alert('被推荐人手机号码格式不正确！');
+        return false;
+      }
+      else if (!nameReg.test(name1)) {
+        alert('被推荐人姓名不合法！');
+        return false;
+      }
+      else if (!phoneReg.test(phone2)) {
+        alert('推荐人手机号码格式不正确！');
+        return false;
+      }
+      else if (!nameReg.test(name2)) {
+        alert('推荐人姓名不合法！');
+        return false;
+      }
+      //正确
+      else {
+        callback();
         layer.close(index);
       }
     }
