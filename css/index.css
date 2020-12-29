@@ -517,7 +517,7 @@ div {
 
 .yuyue {
 	margin-top : .2rem;
-	padding    : 0 .3rem .2rem .3rem;
+	padding    : 0 .3rem 0 .3rem;
 }
 
 .yuyue .title {
@@ -620,6 +620,19 @@ div {
 	background-color : #e0fafc;
 	border           : 1px solid #25c3cf;
 	border-radius    : .1rem;
+}
+
+.yuyue .user-history{
+	height : 2.4rem;
+	line-height: .48rem;
+	padding: 0 .4rem;
+	margin-top : .2rem;
+	overflow-y: hidden;
+}
+.yuyue .user-history p{
+	display: flex;
+	justify-content: space-between;
+	font-size : .24rem;
 }
 
 .guwen {
