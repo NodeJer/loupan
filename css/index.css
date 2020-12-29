@@ -1026,13 +1026,9 @@ div {
 	z-index: 2;
 }
 
-.footer .icons img:first-child {
+.footer .icons img {
 	width : .6rem;
-}
-
-.footer .icons img:last-child {
-	width      : .27rem;
-	margin-top : .24rem;
+	margin-top : .3rem;
 }
 
 .nav {
